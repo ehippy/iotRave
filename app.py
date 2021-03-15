@@ -31,6 +31,7 @@ for tweet in search_result:
         outgoing_tweet = "#Cheerlights 💕 @{user_name} because they 💖 {color}"\
             .format(user_name=tweet.author.screen_name, color=found_color)
         api.update_status(outgoing_tweet, in_reply_to_status_id=tweet.id)
+        api.create_favorite(tweet.id)
         print("Tweeted:" + outgoing_tweet)
         break
 
